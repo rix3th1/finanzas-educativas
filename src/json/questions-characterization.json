@@ -1,0 +1,72 @@
+[
+  {
+    "key": "gender",
+    "title": "Género",
+    "subtext": "Estadísticas Género > Caracterización"
+  },
+  {
+    "key": "age",
+    "title": "Edad",
+    "subtext": "Estadísticas Edad > Caracterización"
+  },
+  {
+    "key": "civilStatus",
+    "title": "Estado Civíl",
+    "subtext": "Estadísticas Estado Civíl > Caracterización"
+  },
+  {
+    "key": "educationLevel",
+    "title": "Nivel de Educación",
+    "subtext": "Estadísticas Nivel Educación > Caracterización"
+  },
+  {
+    "key": "financialProducts",
+    "title": "Productos Financieros",
+    "subtext": "Estadísticas Productos Financieros > Caracterización"
+  },
+  {
+    "key": "healthSystemAffiliation",
+    "title": "Sistema de Salud",
+    "subtext": "Estadísticas del nivel de educación del instrumento de caracterización"
+  },
+  {
+    "key": "houseServices",
+    "title": "Servicios Hogar",
+    "subtext": "Estadísticas del estado civíl del instrumento de caracterización"
+  },
+  {
+    "key": "incomeComeFrom",
+    "title": "Provención de Ingresos",
+    "subtext": "Estadísticas del nivel de educación del instrumento de caracterización"
+  },
+  {
+    "key": "isInAPensionFund",
+    "title": "Afiliación Fondo Pensiones",
+    "subtext": "Estadísticas del estado civíl del instrumento de caracterización"
+  },
+  {
+    "key": "numberPeopleContributing",
+    "title": "# Personas Aportan al Hogar",
+    "subtext": "Estadísticas del nivel de educación del instrumento de caracterización"
+  },
+  {
+    "key": "numberPeopleDependFinancially",
+    "title": "# Personas Dependen Economicamente Usuario",
+    "subtext": "Estadísticas del estado civíl del instrumento de caracterización"
+  },
+  {
+    "key": "residenceArea",
+    "title": "Zona donde Viven",
+    "subtext": "Estadísticas del nivel de educación del instrumento de caracterización"
+  },
+  {
+    "key": "socioeconomicLevel",
+    "title": "Nivel SocioEconómico (Estrato)",
+    "subtext": "Estadísticas del estado civíl del instrumento de caracterización"
+  },
+  {
+    "key": "typeOfHousing",
+    "title": "Tipo Vivienda",
+    "subtext": "Estadísticas del nivel de educación del instrumento de caracterización"
+  }
+]

@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  body {
+    @apply antialiased text-slate-900 dark:text-slate-100 bg-white dark:bg-slate-900 selection:text-slate-950 selection:bg-slate-950/10 dark:selection:text-slate-200 dark:selection:bg-slate-50/10;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply pointer-events-none;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    scale: 25%;
+  }
+
+  to {
+    opacity: 1;
+    scale: 100%;
+  }
+}
+
+iframe,
+.flow-finanzas-xd {
+  view-timeline-name: --image;
+  view-timeline-axis: block;
+
+  animation-timeline: --image;
+  animation-name: show;
+
+  animation-range: entry 25% cover 30%;
+  animation-fill-mode: both;
+}
+
+html::-webkit-scrollbar,
+p::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+html::-webkit-scrollbar-thumb,
+p::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb {
+  @apply bg-boston-blue-600;
+  border-radius: 5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar:vertical {
+  width: 50px;
+  scrollbar-color: var(--primary-color);
+}
+
+.spinner-box {
+  @apply w-80 h-80 flex justify-center items-center bg-transparent;
+}
+
+.leo-border-1 {
+  @apply absolute w-36 h-36 p-[3px] flex justify-center items-center rounded-full bg-boston-blue-600;
+  background: linear-gradient(0deg, #008aae1a 33%, #008aae 100%);
+  animation: spin3D 2s linear 0s infinite;
+}
+
+.leo-border-2 {
+  @apply absolute w-36 h-36 p-[3px] flex justify-center items-center rounded-full bg-sushi-500;
+  background: linear-gradient(0deg, #79ad341a 33%, #79ad34 100%);
+  animation: spin3D 1.6s linear 0s infinite;
+}
+
+.leo-core-1 {
+  @apply w-full h-full rounded-full  dark:bg-slate-800/80 bg-zinc-100/40;
+}
+
+.leo-core-2 {
+  @apply w-full h-full rounded-full  dark:bg-slate-800/80 bg-zinc-100/40;
+}
+
+@keyframes spin3D {
+  from {
+    transform: rotate3d(0.5, 0.5, 0.5, 360deg);
+  }
+  to {
+    transform: rotate3d(0deg);
+  }
+}
