@@ -454,7 +454,7 @@ export function recoveryPassword({
             <table class="email-content" width="100%" cellpadding="0" cellspacing="0" role="presentation">
               <tr>
                 <td class="email-masthead">
-                  <a href="https://finanzas-educativas.vercel.app/" class="f-fallback email-masthead_name">
+                  <a href="https://finanzaseducativas.vercel.app/" class="f-fallback email-masthead_name">
                   ${pkg.description}
                 </a>
                 </td>
@@ -485,7 +485,7 @@ export function recoveryPassword({
                               </td>
                             </tr>
                           </table>
-                          <p>Por motivos de seguridad, si no solicitó un restablecimiento de contraseña, ignore este correo electrónico o comuníquese con <a href="https://finanzas-educativas.vercel.app/contact">soporte</a> si tiene preguntas.</p>
+                          <p>Por motivos de seguridad, si no solicitó un restablecimiento de contraseña, ignore este correo electrónico o comuníquese con <a href="https://finanzaseducativas.vercel.app/contact">soporte</a> si tiene preguntas.</p>
                           <p>Gracias,
                             <br>El equipo de ${pkg.description} ITFIP.</p>
                           <!-- Sub copy -->

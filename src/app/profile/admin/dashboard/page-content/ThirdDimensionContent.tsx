@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 const getThirdDimensionContent = async () => {
   try {
     const secondDimensionContent = await fetch(
-      `${process.env.NEXTAUTH_URL}/api/admin/third-dimension`,
+      `${process.env.NEXTAUTH_URL}/api/admin/third-dimension`
     );
     const data = await secondDimensionContent.json();
     return data;
@@ -21,7 +21,7 @@ export default async function ThirdDimensionContent() {
     await getThirdDimensionContent();
   const financeManagementDescription = financeManagement[0].description.slice(
     0,
-    30,
+    30
   );
 
   return (

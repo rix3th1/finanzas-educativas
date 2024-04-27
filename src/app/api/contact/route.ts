@@ -1,6 +1,6 @@
 import { htmlForAdminContact, htmlForUserContact } from "@/email_templates";
 import { db } from "@/libs/prismaDB";
-import { sendEmail } from "@/libs/sgMail";
+import { sendEmail } from "@/libs/nodemailer";
 import { contactSchema } from "@/schemas/contact.schema";
 import { type Contact } from "@prisma/client";
 import { NextResponse } from "next/server";
@@ -25,37 +25,37 @@ export async function POST(request: Request) {
     const msgSendedToUser = await sendEmail(
       contactData.email,
       subject,
-      htmlForUserContact(),
+      htmlForUserContact()
     );
-    if (!msgSendedToUser?.response) {
+    if (msgSendedToUser?.error) {
       return NextResponse.json(
         { message: `Error sending email to ${contactData.email}` },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
     const msgSendedToAdmin = await sendEmail(
       process.env.EMAIL_CONTACTS!,
       subject,
-      htmlForAdminContact(contactData),
+      htmlForAdminContact(contactData)
     );
-    if (!msgSendedToAdmin?.response) {
+    if (msgSendedToAdmin?.error) {
       return NextResponse.json(
         { message: `Error sending email to ${process.env.EMAIL_CONTACTS}` },
-        { status: 500 },
+        { status: 500 }
       );
     }
 
     return NextResponse.json(
       { message: `Gracias por contactar con el equipo de ${pkg.description}` },
-      { status: 201 },
+      { status: 201 }
     );
   } catch (error) {
     console.error({ error });
 
     return NextResponse.json(
       { message: "Something went wrong.", error },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
