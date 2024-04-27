@@ -1,5 +1,5 @@
+import { origin, rpID, rpName } from "@/constants";
 import { authOptions } from "@/libs/authOptions";
-import { expectedOrigin, rpID, rpName } from "@/constants";
 import { db } from "@/libs/prismaDB";
 import { getPublicKeyCredentialDescriptor } from "@/libs/webauthn";
 import {
@@ -77,7 +77,7 @@ export async function GET() {
 
       return NextResponse.json(
         { message: message ? message : "Unauthorized." },
-        { status: 401 },
+        { status: 401 }
       );
     }
   }
@@ -116,7 +116,7 @@ export async function POST(request: Request) {
         await verifyRegistrationResponse({
           response,
           expectedChallenge,
-          expectedOrigin,
+          expectedOrigin: origin,
           expectedRPID: rpID,
         });
 
@@ -164,7 +164,7 @@ export async function POST(request: Request) {
 
       return NextResponse.json(
         { message: message ? message : "Unauthorized." },
-        { status: 401 },
+        { status: 401 }
       );
     }
   }

@@ -1,4 +1,4 @@
-import { expectedOrigin, rpID } from "@/constants";
+import { origin, rpID } from "@/constants";
 import type { Authenticator } from "@/interfaces/Authenticator";
 import { verifyPassword } from "@/libs/bcrypt";
 import { db } from "@/libs/prismaDB";
@@ -42,13 +42,13 @@ export const authOptions: NextAuthOptions = {
 
         if (existingUser.disabled) {
           throw new Error(
-            `El usuario ${existingUser.firstName} ${existingUser.lastName} ha sido deshabilitado.`,
+            `El usuario ${existingUser.firstName} ${existingUser.lastName} ha sido deshabilitado.`
           );
         }
 
         const passwordMatch = await verifyPassword(
           credentials!.password,
-          existingUser.hashedPassword,
+          existingUser.hashedPassword
         );
 
         if (!passwordMatch) return null;
@@ -105,7 +105,7 @@ export const authOptions: NextAuthOptions = {
 
         if (existingUser.disabled) {
           throw new Error(
-            `El usuario ${existingUser.firstName} ${existingUser.lastName} ha sido deshabilitado.`,
+            `El usuario ${existingUser.firstName} ${existingUser.lastName} ha sido deshabilitado.`
           );
         }
 
@@ -116,12 +116,12 @@ export const authOptions: NextAuthOptions = {
         }
 
         const authenticationResponse: AuthenticationResponseJSON = JSON.parse(
-          request.body?.verification,
+          request.body?.verification
         );
 
         const authenticatorFound = getAuthenticatorByCredentialId(
           currentUserAuthenticators,
-          authenticationResponse.rawId,
+          authenticationResponse.rawId
         ) as Authenticator;
         if (
           !authenticatorFound ||
@@ -129,7 +129,7 @@ export const authOptions: NextAuthOptions = {
           !expectedChallenge
         ) {
           throw new Error(
-            `No se encontró el autenticador para el usuario ${existingUser.email}`,
+            `No se encontró el autenticador para el usuario ${existingUser.email}`
           );
         }
 
@@ -138,7 +138,7 @@ export const authOptions: NextAuthOptions = {
           verification = await verifyAuthenticationResponse({
             response: authenticationResponse,
             expectedChallenge,
-            expectedOrigin,
+            expectedOrigin: origin,
             expectedRPID: rpID,
             authenticator: authenticatorFound,
           });
